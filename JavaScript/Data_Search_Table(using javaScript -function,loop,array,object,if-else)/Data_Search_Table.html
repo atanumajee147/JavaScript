@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Search Table</title>
+<link rel="shortcut icon" href="./img/favic.ico" type="image/x-icon">
+  <style>
+      *{
+          margin: 0;
+          padding: 0;
+      }
+body{
+    height: 100vh;
+}
+main{
+ height: 89vh;
+}
+.progress{
+    height: 2px;
+    width: 0vw;
+    background-color: red;
+    animation: progress ease-in-out 2s 1s 1  ;
+}
+  @keyframes progress {
+      0%{
+          width: 0vw;
+      }
+      40%{
+          width: 60vw;
+      }
+      100%{
+          width: 100vw;
+      }
+  }
+
+      nav ul li {
+          float: left;
+          list-style: none;
+          background-color: rgb(15, 15, 15);
+          border: 2px solid red ;
+          padding:10px ;
+          margin: 0px 2px;
+          width: auto;
+          
+           
+      }
+      li a{
+        text-decoration: none;
+        color: aquamarine;
+        text-align: center ;
+        font-variant: small-caps;
+      
+      }
+      nav ul li:hover {
+          float: left;
+          list-style: none;
+          background-color: rgb(22, 21, 22);
+          border: 2px solid rgb(250, 250, 25) ;
+          padding:10px ;
+          margin: 0px 2px;
+          width: auto;
+          
+           
+      }
+      li a:hover{
+        text-decoration: none;
+        color: rgb(216, 230, 20);
+        text-align: center ;
+        font-variant: small-caps;
+      }
+
+      nav ul{
+          height: 45px;
+          background-color: black;
+          border: 2px solid white ;
+      }
+#left{
+    float: right;
+}
+
+.Atvcolor{
+    color: greenyellow;
+    /* border: 2px solid yellow; */
+}
+.active{
+    background-color: rgb(19, 19, 19);
+    border: 2px solid rgb(222, 215, 31);
+}
+h1{
+    background-color: aqua;
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+button{
+    height: 50px;
+    width: 100px;
+    background-color: blue;
+    text-align: center ;
+    /* box-sizing: border-box; */
+    box-shadow: 5px 5px 5px gray;
+    border-radius: 30px;
+ margin-top: 2vw  ;
+ margin-left: 2vw;
+ cursor: pointer;
+ animation: bMargin ease-in-out 2s 1s 1;
+
+}
+button:hover{
+    height: 50px;
+    width: 100px;
+    background-color: rgb(87, 241, 16);
+    text-align: center ;
+    /* box-sizing: border-box; */
+    box-shadow: 5px 5px 5px rgb(11, 10, 10);
+    border-radius: 30px;
+ margin-top: 2vw  ;
+ margin-left: 2vw;
+ cursor: pointer;
+ animation: bMargin ease-in-out 2s 1s 1;
+
+}
+@keyframes bMargin {
+  
+     0%{
+         margin-left: 30vw;
+         opacity: hidden;
+     }
+     40%{
+         margin-left:10vw;
+         background-color: rgb(236, 56, 15);
+         box-shadow: 5px 5px 5px rgb(114, 5, 5);
+         border-radius: 100px;
+         border: rgb(2, 2, 2);
+     }
+     100%{
+         margin-left:2vw;
+     }
+  
+}
+
+#searchBox{
+   /* float: left; */
+    background-color: aqua;
+    height: 30px;
+    width: 400px;
+    margin-left: 60px;
+    border-radius: 4px;
+    font-size: medium;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    box-shadow:10px 10px 5px 5px rgb(2, 53, 59);
+    /* cursor: pointer; */
+    margin: 2vw 2vw ;
+}
+#searchBox:hover{
+   /* float: left; */
+    background-color:deepskyblue;
+    height: 30px;
+    width: 400px;
+    margin-left: 60px;
+    border-radius: 4px;
+    font-size: medium;
+    font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: center;
+    box-shadow:10px 10px 5px 5px rgb(2, 53, 59);
+    cursor: pointer;
+    margin: 2vw 2vw ;
+}
+
+table{
+    background-color: rgb(185, 197, 19);
+    color: rgb(11, 15, 18);
+    table-layout: auto;
+    border-color: rgb(8, 237, 23);
+
+   width: 80vw;
+   align-items: center ;
+   margin-left: 120px ;
+   margin-top: 5px;
+}
+table td {
+    align-items: center;
+    /* background-color: yellowgreen; */
+    text-align: center ;
+    background-color: aqua;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 20px;
+    font-style: bold;
+}
+
+  .footer
+  {
+      background-color: black;
+      align-items: center ;
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      color: rgb(213, 26, 26);
+      height: 28px;
+      border: 2px double white;
+      text-align: center;
+  }
+.footer p{
+    padding-top: 5px;
+
+}
+#mimg{
+    margin: 1.1vw 2vw;
+    float: left;
+ 
+}
+  </style>
+
+
+</head>
+<body>
+    <header>
+        <div class="progress"></div>
+        <nav>
+            <ul>
+               <li class="active"><a href="./SearchTable.html" class="Atvcolor" >Home</a></li>
+               <li><a href="#">About</a></li>
+               <li><a href="#">Contact</a></li>
+               <li id="left" ><a href="#" >Login</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+      <h1> Data Search Table Create </h1>
+       <!-- use to search button onclick   -->
+      <div id="mimg"><img src="./img/icon.png"  onclick="TableData()" height="60px" alt="this is the icon"> </div>
+      <abbr  title="Click To open the Data Table !"> <input type="text" name="input"  onclick="TableData()" id="searchBox" placeholder="Search by name" autocomplete="off" ></abbr>
+     <abbr title="Hit and open Search Item"> <button id="myBtn" onclick="searchByName()">Search</button> </abbr>
+
+      <!-- use to search on keyup  -->
+     <!--<abbr  title="Click To open the Data Table !"> <input type="text" name="input"  onclick="TableData()" id="searchBox" placeholder="Search by name" autocomplete="off" onkeyup="searchByName()" ></abbr>-->
+   
+<hr>
+
+<div id="myTable"></div>
+
+
+</main>
+<footer>
+    <div class="footer">
+        <p>
+            <i> ^_^ copyright: &copy; atanumajee147@gmail.com  ^_^   </i>
+        </p>
+    </div>
+</footer>
+<script>
+
+
+   
+let Student = [{
+    "Name":"Atanu Majee",
+    "Roll":"27500120045",
+    "Contact":"9679306200",
+    "Address":"Purulia"
+},
+ {
+    "Name":"Sarbani Lohar",
+    "Roll":"27500120045",
+    "Contact":"9749494679",
+    "Address":"Durgapur"
+},
+
+ {
+    "Name":"Dolan Champa Biswas",
+    "Roll":"27500120042",
+    "Contact":"8945716492",
+    "Address":"Nodia"
+},
+
+
+ {
+    "Name":"Thamim Mollah",
+    "Roll":"27500120046",
+    "Contact":"9784581248",
+    "Address":"Howrah"
+},
+ {
+    "Name":"Sanatan Bag",
+    "Roll":"27500120040",
+    "Contact":"6971642645",
+    "Address":"Sundorbon"
+},
+ {
+    "Name":"Tamal Das",
+    "Roll":"275001211",
+    "Contact":"7548464521",
+    "Address":"Purulia"
+}];
+
+function TableData(){
+
+    let myTable = document.getElementById("myTable");
+    
+
+
+     let myContaner = "<table border='4px' id='TableId'>"
+        myContaner =  myContaner + "<tr>";
+    myContaner = myContaner + "<th>Name</th>";
+    myContaner = myContaner + "<th>Roll</th>";
+    myContaner = myContaner + "<th>Contact</th>";
+    myContaner = myContaner + "<th>Address</th>";
+   
+
+
+    myContaner = myContaner + "</tr>";
+
+
+    for (i = 0; i < Student.length; i++) {
+         myContaner =  myContaner + "<tr>";
+         myContaner =  myContaner + "<td>" + Student[i].Name + "</td>";
+         myContaner =  myContaner + "<td>" + Student[i].Roll+ " </td>";
+         myContaner =  myContaner + "<td>" + Student[i].Contact + " </td>";
+         myContaner =  myContaner + "<td>" + Student[i].Address + " </td>";
+         
+         myContaner =  myContaner + "</tr>";
+    }
+    myContaner = myContaner + " </table>";
+    myTable.innerHTML = myContaner;
+}
+
+
+function searchByName() {
+            //use to data fatch from Search box 
+            let input = document.getElementById("searchBox").value;
+
+            // use to Identify the table
+            let TableId = document.getElementById("TableId");
+
+            //Now find the No. of rows in the table
+            let TableRow = TableId.getElementsByTagName("tr");
+
+            for (i = 0; i < TableRow .length; i++) {
+                //Find that td is available or not in the current Row
+                let fstName = TableRow[i].getElementsByTagName("td")[0];
+
+                if (fstName) {
+                    let name = fstName.innerHTML; 
+                    let input_len = input.length; 
+                    let data = name.slice(0, input_len); 
+
+                    if (data == input) {
+                        TableRow[i].style.display = "";
+                    } else {
+                        TableRow[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    myBtn.addEventListener('click', function(){
+//    myBtn.style.classList.add("searchBox");
+//    alert("yes its worked !")
+
+  let mySearch = document.querySelectorAll('.searchBox').innerHTML;
+  
+
+
+    });
+  
+</script>
+
+   
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time & Date</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Rubik+Microbe&family=Rubik+Puddles&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredericka+the+Great&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        main {
+            height: 87vh;
+        }
+
+        .progress {
+            background-color: rgb(243, 19, 19);
+            height: 2px;
+            width: 0vw;
+            animation: progress 1s 1s ease-in-out;
+        }
+
+        @keyframes progress {
+            0% {
+                width: 0vw;
+            }
+
+            40% {
+                width: 60vw;
+                background-color: rgb(247, 17, 17);
+            } 
+
+            100% {
+                width: 100vw;
+            }
+        }
+
+        nav ul li {
+            float: left;
+            background-color: black;
+            border: 2px solid rgb(241, 55, 23);
+            list-style: none;
+            padding: 10px;
+            margin: 0px 3px 0px 1px;
+        }
+
+        nav ul {
+            background-color: black;
+            height: 45px;
+            border: 2px solid gray;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px rgb(15, 237, 219);
+            font-variant: small-caps;
+            font-size: medium;
+        }
+
+        #active {
+            border: 2px solid green;
+            background: rgb(30, 30, 30);
+        }
+
+        #Tactive {
+            color: rgb(83, 220, 20);
+            text-shadow: 1px 1px 1px rgb(233, 46, 13);
+        }
+
+        #left {
+          
+            margin-left: 1140px;
+            animation: left 5s 1s ease-in-out;
+        }
+
+    @keyframes left {
+        0%{
+            margin-left:10px;
+        }
+        40%{
+            margin-left: 800px;
+            background-color:  darkorange;;
+             color: rgb(20, 20, 20);
+             border: 2px double rgb(241, 12, 12);
+        }
+        100%{
+            margin-left: 1140px;
+        }
+    }
+
+        #footer {
+            background-color: black;
+            border: 2px solid gray;
+            color: whitesmoke;
+            text-shadow: 1px 1px 1px greenyellow;
+            text-align: center;
+            text-decoration: none;
+            height: 30px;
+            font-size: medium;
+            padding-top: 10px;
+
+        }
+
+        footer p {
+            animation: blinkText 5s 5s infinite ease-in;
+        }
+
+        @keyframes blinkText {
+            from {
+                opacity: 1;
+                color: yellow;
+            }
+
+            to {
+                opacity: 0;
+                color: rgb(222, 37, 37);
+            }
+        }
+
+        #hId {
+            background-color: aqua;
+            text-align: center;
+            font-family: 'Rubik Puddles', cursive;
+            color: rgb(7, 44, 248);
+        }
+
+        table {
+            border: 2px solid rgb(6, 40, 33);
+            height: 30vh;
+            width: 50vw;
+            background-color: rgb(15, 240, 15);
+            margin: 20px 30vw 10px;
+            align-items: center;
+            box-shadow: 20px 20px 20px rgb(40, 90, 69);
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        table th {
+             text-decoration: none;
+            height: 5vh;
+            background-color: rgb(9, 150, 103);
+            font-size: 25px;
+            font-variant: small-caps;
+            font-family: 'Fredericka the Great', cursive;
+            color: navy;
+        }
+        #time {
+            margin-left: 100vw;
+            background-color: rgb(2, 7, 15);
+            text-align: center;
+            font-family: 'Rubik Microbe', cursive;
+            color: rgb(247, 14, 14);
+            font-size: 35px;
+        }
+        #icon:hover{
+   height: 100px;
+   width: 150px;
+ }
+    </style>
+</head>
+
+<body>
+    <div class="progress"></div>
+    <header>
+        <nav>
+            <ul>
+                <abbr title="This is the index page of the Webside !">
+                    <li id="active"><a href="./time&date.html" id="Tactive">Home</a></li>
+                </abbr>
+                <abbr title="This page is Under Mantance!">
+                    <li><a href="#">About</a></li>
+                </abbr>
+                <abbr title="This page is Under Mantance!">
+                    <li><a href="#">contact</a></li>
+                </abbr>
+                <abbr title="This page is Under Mantance!">
+                    <li><a href="#">Gallery</a></li>
+                </abbr>
+
+                <abbr title="Click to login">
+                    <li id="left"><a href="#">Login</a></li>
+                </abbr>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1 id="hId">Time & Date with JavaScript.</h1>
+        
+            <div class="contaner">
+                <form>
+                    <table border="2px">
+                        <thead>
+                            <tr>
+                                <th rowspan=""> Real Time & Date Clock</th>
+                            </tr>
+                        </thead>
+                        <abbr title="This is Real Time Generator Clock ">
+                        <tbody>
+                            <tr>
+                                <td id="time">Wait Output come from the javaScript </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+    </main>
+    <footer id="footer">
+        <p> <img src="./img/icon.png" alt="icon"   height="20px" width="26px">  @copyright from : <a href="mailto:atanumajee147@gmail.com" style="text-decoration: none;">
+                atanumajee147@gmail.com &copy;</a>  <img src="./img/icon.png" alt="icon"   height="20px" width="26px">  </p>
+    </footer>
+    </abbr>
+    
+    <script>
+
+const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+        setInterval(() => {
+
+
+            let myTime = new Date();
+
+            // using Backticks new update on the JavaScript 
+            /*
+                let time = (`${myTime.getHours()}: ${myTime.getMinutes()}:${myTime.getSeconds()} ^_^ ${myTime.toLocaleDateString()}`);
+               document.getElementById("time").innerHTML= time ;
+            
+             */
+
+            // Otherthan using normal + furmula 
+       
+
+            let time = myTime.getHours() + " : " + myTime.getMinutes() + " : " + myTime.getSeconds();
+            let date = myTime.toLocaleDateString(undefined, options);
+            document.getElementById("time").innerHTML = time + " ^_^ " + date;
+
+
+            //    console.log(time);
+
+            // Set the time in 1 Second = (1000 milisecond)
+
+        }, 1000);
+    </script>
+</body>
+
+</html>
