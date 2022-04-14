@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider Text </title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            height: 100vh;
+        }
+        main{
+            height:86vh;
+        }
+        nav ul li{
+            list-style: none;
+            padding: 10px 18px;
+            float: left;
+            background-color: black;
+            border:2px solid red;
+            border-radius: 50px ;
+            margin:2px 2px ;
+            box-shadow: 2px 2px 2px  rgb(10, 248, 113);
+           
+        }
+        nav ul li a{
+            text-decoration: none;
+            color: white;
+            font-family: 'Acme', sans-serif;
+        }
+        nav ul li:hover{
+            list-style: none;
+            padding: 10px 20px;
+            float: left;
+            background-color: rgb(79, 235, 27);
+            border:2px solid rgb(5, 42, 247);
+            border-radius: 50px ;
+            margin:2px 2px ;
+           color: black;
+           box-shadow: 2px 2px 2px  rgb(7, 137, 243);
+        }
+        nav ul li a:hover{
+            text-decoration: none;
+            color: rgb(230, 26, 26);
+            font-family: 'Acme', sans-serif;
+        }
+        nav ul{
+            background-color: aqua;
+             height: 47px;
+             border: 3px solid black;
+        }
+     #Active{
+         color: goldenrod;
+         font-family: 'Acme', sans-serif;
+     }
+     #Active:hover{
+         color: rgb(12, 12, 12);
+         font-family: 'Acme', sans-serif;
+     }
+     #left{
+        margin-left: 1060px;
+         animation: a-left 5s 1s ease-in-out 1;
+     }
+    @keyframes a-left{
+      0%{
+        margin-left: 0px;
+      }
+      50%{
+        margin-left: 400px;
+        color: brown;
+        background-color:coral;
+        border: 2px dotted crimson;
+        border-radius: 100px;
+      }
+      100%{
+        margin-left: 1060px;
+      }
+    }
+    #footer{
+        background-color: black;
+        text-align: center;
+        color:antiquewhite;
+        height: 40px;
+     
+    }
+    #footer p {
+      
+        padding-top: 10px;
+        font-family: 'Acme', sans-serif;
+         font-size: medium;
+    }
+main h1{
+    background-color: lightblue;
+    color: darkgreen;
+    text-align: center;
+}
+#myname{
+    font-size: 50px;
+text-align: center;
+color: black;
+width: 200px;
+font-family: 'Acme', sans-serif;
+}
+#name{
+    font-size: 50px;
+text-align: center;
+
+width: 200px;
+font-family: 'Acme', sans-serif;
+
+}
+.scl{
+    align-items: center;
+    width: 400px;
+display: flex;
+border: 2px solid black;
+margin: 10px 50px 20px ;
+border-radius: 20px;
+    background-color:red;
+}
+button{
+    background: blueviolet;
+    border-radius: 20px;
+    color: black;
+    height: 50px ;
+    width: 100px;
+    margin: 2px 40px ;
+    font-Family:'Josefin Sans', sans-serif;
+}
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li style="border: 2px solid green;"><a href="#" id="Active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Gallery</a></li>
+                <li id="left"><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Create A auto Slider Text </h1>
+        <div class="scl"> 
+            <div id="name">Name:</div>
+            <div id="myname"></div>
+          
+        </div>
+        <div class="scl" style="background-color: aliceblue;border: none;"> 
+        <button onclick="previosName()">Previous</button>
+        <button onclick="nextName()">Next</button>
+       
+    </div>
+    </main>
+    <footer id="footer"> <p> ^_^  copyright: <a href="mailto:atanumajee147@gmail.com">atanumajee147@gmail.com</a> &copy;  ^_^ </p></footer>
+    <script>
+        let mynamelist =["Atanu","Santanu","Sarbani","Dolan ","Tamal","Sanatan"];
+        let myname = document.getElementById("myname");
+        let index = 0;
+        myname.innerHTML = mynamelist[index];
+        
+         console.log(mynamelist)
+
+      // use to go privious ... 
+     
+     
+    
+       function nextName(){
+         index++;
+            if (index == mynamelist.length)
+                index = 0;
+           // alert(index + " : " + mymyname.length);
+          //  console.log(index + " : " + mymyname.length);
+
+            // add to work the display function
+            displayName();
+       }
+    // use to display the names 
+       function displayName() {
+            myname.innerHTML = mynamelist[index];
+            console.log(myname)
+        }
+
+      // use this case to show the  privious name
+       function previosName(){
+            index--;
+            displayName();
+        }
+
+     // use to referess per second 
+     setInterval(() => {
+        nextName();
+     }, 1000);
+    </script>
+</body>
+</html>
