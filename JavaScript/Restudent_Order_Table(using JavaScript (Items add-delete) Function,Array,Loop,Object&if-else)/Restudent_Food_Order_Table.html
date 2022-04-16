@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&family=Josefin+Sans:ital,wght@1,500&display=swap"
+        rel="stylesheet">
+    <title>Restudent Food Order Table</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        main {
+            height: 85vh;
+        }
+
+        nav ul li {
+            list-style: none;
+            padding: 10px 18px;
+            float: left;
+            background-color: black;
+            border: 2px solid red;
+            border-radius: 5px;
+            margin: 2px 2px;
+            box-shadow: 2px 2px 2px rgb(10, 248, 113);
+
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: white;
+            font-family: 'Acme', sans-serif;
+        }
+
+        nav ul li:hover {
+            list-style: none;
+            padding: 10px 19px;
+            float: left;
+            background-color: rgb(79, 235, 27);
+            border: 2px solid rgb(5, 42, 247);
+            border-radius: 5px;
+            margin: 2px 2px;
+            color: black;
+            box-shadow: 2px 2px 2px rgb(7, 137, 243);
+        }
+
+        nav ul li a:hover {
+            text-decoration: none;
+            color: rgb(230, 26, 26);
+            font-family: 'Acme', sans-serif;
+        }
+
+        nav ul {
+            background-color: rgb(20, 179, 243);
+            height: 47px;
+            border: 3px solid black;
+        }
+
+        #Active {
+            color: goldenrod;
+            font-family: 'Acme', sans-serif;
+        }
+
+        #Active:hover {
+            color: rgb(12, 12, 12);
+            font-family: 'Acme', sans-serif;
+        }
+
+        #searchButton {
+            list-style: none;
+            padding: 10px 20px;
+
+            background-color: rgb(10, 11, 10);
+            border-radius: 5px;
+            margin: 2px 2px;
+            box-shadow: 2px 2px 2px rgb(10, 248, 113);
+            color: rgb(246, 242, 242);
+            font-family: 'Acme', sans-serif;
+            font-size: medium;
+
+        }
+
+        #searchButton:hover {
+            list-style: none;
+            padding: 10px 20px;
+
+            background-color: rgb(137, 232, 27);
+            border-radius: 5px;
+            margin: 2px 2px;
+            box-shadow: 2px 2px 2px rgb(14, 198, 226);
+            color: rgb(234, 11, 11);
+            font-family: 'Acme', sans-serif;
+            font-size: medium;
+
+        }
+
+        #searchBox {
+            list-style: none;
+            padding: 10px 20px;
+            border: 2px solid red;
+            background-color: black;
+            border-radius: 5px;
+            margin: 2px 2px;
+            box-shadow: 2px 2px 2px rgb(10, 248, 113);
+            color: white;
+            font-family: 'Acme', sans-serif;
+            font-size: medium;
+            margin-left: 840px;
+            animation: a-left 1s 1s ease-in-out 1;
+        }
+
+        #searchBox:hover {
+            list-style: none;
+            padding: 10px 20px;
+            border: 2px solid rgb(201, 11, 11);
+            background-color: rgb(131, 238, 24);
+            border-radius: 5px;
+            margin: 2px 2px;
+            box-shadow: 2px 2px 2px rgb(10, 232, 154);
+            color: rgb(25, 36, 241);
+            font-family: 'Acme', sans-serif;
+            font-size: medium;
+            margin-left: 840px;
+            animation: a-left 1s 1s ease-in-out 1;
+        }
+
+        @keyframes a-left {
+            0% {
+                margin-left: 0px;
+            }
+
+            30% {
+                margin-left: 400px;
+                color: rgb(16, 16, 16);
+                background-color: rgb(244, 125, 13);
+                border: 2px double rgb(222, 7, 18);
+                border-radius: 100px;
+                width: 2px;
+                box-shadow: 5px 5px 5px red;
+            }
+
+            100% {
+                margin-left: 840px;
+            }
+        }
+
+        #footer {
+            background-color: rgb(20, 179, 243);
+            height: 35px;
+            border: 3px solid black;
+
+            text-align: center;
+            color: antiquewhite;
+
+
+        }
+
+        #footer p {
+
+            padding-top: 10px;
+            font-family: 'Acme', sans-serif;
+            font-size: medium;
+            color: white;
+            text-shadow: 1px 1px 1px #000;
+            animation: anim 2s 1s infinite ease-in-out;
+        }
+
+        p a {
+            text-decoration: none;
+            color: white;
+            text-shadow: 1px 1px 1px #000;
+            animation: anim 2s 1s infinite ease-in-out;
+        }
+  @keyframes anim {
+      0%{
+          color:white;
+          text-shadow: 1px 1px 1px #000;
+      }
+      
+      40%{
+          color:rgb(13, 82, 231);
+        
+      }
+      
+      100%{
+          color:rgb(207, 217, 22);
+         
+      }
+      
+  }
+        #footer p:hover {
+
+            padding-top: 10px;
+            font-family: 'Acme', sans-serif;
+            font-size: medium;
+            color: rgb(230, 75, 13);
+            text-shadow: 1px 1px 1px rgb(28, 183, 183);
+        }
+
+        p a:hover {
+            text-decoration: none;
+            color: rgb(226, 8, 8);
+            text-shadow: 1px 1px 1px rgb(28, 183, 183);
+        }
+
+        #manuTableId {
+            background-color: aquamarine;
+            border: 2px solid crimson;
+            height: 20vh;
+            width: 40vw;
+            margin: 20px 20px;
+        }
+
+        #manuTableId th {
+            text-shadow: 1px 1px 1px rgb(166, 166, 171);
+            font-family: 'Acme', sans-serif;
+            background-color: rgb(16, 155, 241);
+            border: 2px solid rgb(85, 20, 197);
+            border-radius: 2px;
+
+        }
+
+        #manuTableId td {
+            background-color: rgb(222, 38, 239);
+            border: 2px solid rgb(85, 20, 197);
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+
+        .edButtos {
+            background-color: aquamarine;
+            height: auto;
+            width: 80%;
+            height: 80%;
+            /* border: 2px solid black; */
+            border-radius: 20%;
+            box-shadow: 2px 2px 2px rgb(6, 198, 219);
+            font-family: 'Acme', sans-serif;
+            text-shadow: 1px 1px 1px rgb(228, 210, 11);
+        }
+
+        #orderBucketTableId {
+            background: lemonchiffon;
+            border: 2px double rgb(85, 20, 197);
+            height: 25vh;
+            width: 40vw;
+            margin: 1vw 1vw;
+   animation: comeAnd 1s 1s ease-in-out 1;
+        }
+@keyframes comeAnd {
+    0%{
+     
+      margin: 1vw 4vw;
+    } 
+    40%{
+        margin-right: 6vw;
+    } 
+    100%{
+        height: 25vh;
+            width: 40vw;
+            margin: 1vw 1vw;
+    } 
+}
+        #orderBucketTableId th {
+            border: indigo 2px solid;
+            background-color: dodgerblue;
+            font-family: 'Acme', sans-serif;
+            text-shadow: 1px 1px 1px rgb(14, 205, 239);
+            border-radius: 2px;
+
+        }
+
+        #orderBucketTableId td {
+            border: rgb(16, 60, 161) 2px solid;
+            background-color: rgb(21, 183, 121);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            text-align: center;
+        }
+        #pleft{
+            text-align-last: right;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li style="border: 2px solid green;"><a href="#" id="Active">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+                <li><a href="#">Gallery</a></li>
+
+                <abbr title="search your manu  !"> <input type="text" onclick="TableData()" id="searchBox"
+                        placeholder="Enter your item name " autocomplete="off"></abbr>
+                <input type="button" onclick="searchByName()" id="searchButton" value="Search">
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="food_Order_Manu" ></div>
+        <div id="OrderBucketId"></div>
+    </main>
+    <footer id="footer">
+       <a href="mailto:atanumajee147@gmail.com" style="float:right;margin-right: 10px;"><img src="./img/icon.png" height="32px" alt="this is the icon of the page !"></a><a href="mailto:atanumajee147@gmail.com" style="float:left;margin-left: 10px;"><img src="./img/icon.png" height="32px" alt="this is the icon of the page !"></a> <p> ^_^ copyright: <a href="mailto:atanumajee147@gmail.com">atanumajee147@gmail.com</a> &copy; ^_^ </p>  
+    </footer>
+    <script>
+
+        // fst create a array to store the manu items
+        let food_Item_Array = [{
+            "no": 1,
+            "name": "Tea",
+            "price": 10
+        },
+        {
+            "no": 2,
+            "name": "Coffee",
+            "price": 20
+        }, 
+        {
+            "no": 3,
+            "name": "Icecream",
+            "price": 10
+        },
+        {
+            "no": 4,
+            "name": "Fuchka",
+            "price": 15
+        }
+        ];
+        // console.log( food_Item_Array)
+        let Order_Items_Bucket_Array = [];
+        // now call the display_manu(); function 
+        display_manu();
+        // display the food items manu table 
+        function display_manu() {
+            let manuTable = "<table  id='manuTableId'>"
+            manuTable = manuTable + "<tr>"
+
+            manuTable = manuTable + "<th colspan='6'>Menu Card</th>"
+            manuTable = manuTable + "</tr>"
+            manuTable = manuTable + "<tr>"
+            manuTable = manuTable + "<th>NO</th>"
+            manuTable = manuTable + "<th>Food Name</th>"
+            manuTable = manuTable + "<th>Price(Rs.)</th>"
+            manuTable = manuTable + "<th>Cart</th>"
+            manuTable = manuTable + "</tr>"
+            for (let food = 0; food < food_Item_Array.length; food++) {
+                manuTable = manuTable + "<tr>"
+                manuTable = manuTable + "<td>" + food_Item_Array[food].no + "</td>"
+                manuTable = manuTable + "<td>" + food_Item_Array[food].name + "</td>"
+                manuTable = manuTable + "<td>" + food_Item_Array[food].price + "</td>"
+                manuTable = manuTable + "<td><button class='edButtos' onclick='addFoods(this)'>ADD</button></td>"
+                manuTable = manuTable + "</tr>"
+
+            }
+            manuTable = manuTable + "</table>";
+            // push the data in food_Order_Manu this id.
+            document.getElementById("food_Order_Manu").innerHTML = manuTable;
+        }
+        // use to search the table items ....
+        function searchByName() {
+            //use to data fatch from Search box (this Search Bar id )
+            let input = document.getElementById("searchBox").value;
+
+            // use to Identify the table (search table id )
+            let manuTableId = document.getElementById("manuTableId");
+
+            //Now find the No. of rows in the table
+            let TableRow = manuTableId.getElementsByTagName("tr");
+            // use to chatch the row when you search 
+            for (i = 0; i < TableRow.length; i++) {
+                //Find that td is available or not in the current Row
+                let ItemName = TableRow[i].getElementsByTagName("td")[1];
+
+                if (ItemName) {
+                    let item = ItemName.innerHTML;
+                    let input_len = input.length;
+                    let data = item.slice(0, input_len);
+
+                    if (data == input) {
+                        TableRow[i].style.display = "";
+                    } else {
+                        TableRow[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+        // add items buttons function 
+        function addFoods(food) {
+            let selectFood = food.parentElement.parentElement;
+            let food_no = selectFood.getElementsByTagName("td")[0];
+            let food_name = selectFood.getElementsByTagName("td")[1];
+            let food_price = selectFood.getElementsByTagName("td")[2];
+
+            let no = food_no.innerHTML;
+            let name = food_name.innerHTML;
+            let price = food_price.innerHTML;
+
+            //  alert(no + " " + name+ " " + price);
+            // add order bucket 
+            let new_food_order = {
+                "no": no, "name": name, "price": price, "quantity": 1
+            };
+
+            // fst check your order already add the Order_Items_Bucket_Array
+            let item_in_Bucket = -1;
+            for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
+                if (Order_Items_Bucket_Array[food].no == no) {
+                    item_in_Bucket = food;
+                }
+
+            }
+            // if  not the food added in the Order_Items_Bucket_Array
+            if (item_in_Bucket < 0) {
+                Order_Items_Bucket_Array.push(new_food_order);
+                alert(no + "." + name + " Price " + price + "  Add your Bucket !  ");
+                console.log(Order_Items_Bucket_Array);
+            }
+            // if already added the food in your Order_Items_Bucket_Array than change the Quantity
+            else {
+                Order_Items_Bucket_Array[item_in_Bucket].quantity = Order_Items_Bucket_Array[item_in_Bucket].quantity + 1;
+                alert(no + "." + name + " Price " + price + " Already exits you extend the Quantity ");
+                console.log(Order_Items_Bucket_Array);
+
+            }
+            // call the functions 
+            display_order_Bucket();
+         }
+         // Display the display_order_Bucket table 
+          function display_order_Bucket() {
+            let orderTable = "<table  id='orderBucketTableId'>"
+            orderTable = orderTable + "<tr>"
+
+            orderTable = orderTable + "<th colspan='8'> Order Bucket </th>"
+            orderTable = orderTable + "</tr>"
+            orderTable = orderTable + "<tr>"
+            orderTable = orderTable + "<th>NO</th>"
+            orderTable = orderTable + "<th>Food Name</th>"
+            orderTable = orderTable + "<th>Price(Rs.)</th>"
+            orderTable = orderTable + "<th>Quantity</th>"
+            orderTable = orderTable + "<th>Total</th>"
+            orderTable = orderTable + "<th colspan='2'>Action</th>"
+            orderTable = orderTable + "<th >Delete</th>"
+            orderTable = orderTable + "</tr>"
+
+            // use to add the total amount 
+
+            let pay = 0;
+
+            // use the loop to print the Array values 
+            for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
+                orderTable = orderTable + "<tr>"
+                orderTable = orderTable + "<td >" + Order_Items_Bucket_Array[food].no + "</td>"
+                orderTable = orderTable + "<td>" + Order_Items_Bucket_Array[food].name + "</td>"
+                orderTable = orderTable + "<td>" + Order_Items_Bucket_Array[food].price + "</td>"
+                orderTable = orderTable + "<td>" + Order_Items_Bucket_Array[food].quantity + "</td>"
+
+                // Formula how to add the total ..... (quantity*price)
+
+                let total = parseInt(Order_Items_Bucket_Array[food].quantity) * parseInt(Order_Items_Bucket_Array[food].price);
+                pay = pay + total;
+
+                // console.log("Total:" + total);
+                orderTable = orderTable + "<td>" + total + "</td>"
+                orderTable = orderTable + "<td><button class='edButtos' onclick='plusFootsQuantity(this)'>➕</button></td>"
+                orderTable = orderTable + "<td><button class='edButtos' onclick='minusFootsQuantity(this)'>➖</button></td>"
+                orderTable = orderTable + "<td><button class='edButtos' onclick='deleteFootsQuantity(this)'>Delete</button></td>"
+
+                orderTable = orderTable + "</tr>"
+            }
+                orderTable = orderTable + "<tr>"
+                orderTable = orderTable + "<th colspan='8'>" + " ---*---   Thank You Visit Again  ---*---  || Your Total Payable Value: " + "<b id='total'> </b style='text-align: center;'> </th>"
+                
+                orderTable = orderTable + "</tr>"
+                
+                //console.log("All Total:"+pay);
+            orderTable = orderTable + "</table>";
+
+            // push the data in OrderBucketId this id.
+
+            document.getElementById("OrderBucketId").innerHTML = orderTable;
+           let tpay = document.getElementById("total")
+            tpay.innerHTML=pay;
+            tpay.style.color="red";
+            tpay.style.textShadow="1px 1px 1px pink";
+         }
+
+         // use to extend the quality 
+         // i add the no in a variable than add with inner HTML , run a loop than extend the quality
+         function plusFootsQuantity(lets) {
+            selectFood = lets.parentElement.parentElement;
+            let food_no = selectFood.getElementsByTagName("td")[0];
+            no = food_no.innerHTML;
+            for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
+                if (Order_Items_Bucket_Array[food].no == no) {
+                    Order_Items_Bucket_Array[food].quantity = Order_Items_Bucket_Array[food].quantity + 1;
+
+                }
+            
+            }
+            display_order_Bucket();
+         }
+         // i add the no in a variable than add with inner HTML , run a loop than minus the quality
+         function minusFootsQuantity(lets) {
+
+
+            // add a variable to no and quantity 
+            selectFood = lets.parentElement.parentElement;
+            let food_no = selectFood.getElementsByTagName("td")[0];
+            let food_quantity = selectFood.getElementsByTagName("td")[3];
+            let food_name = selectFood.getElementsByTagName("td")[1];
+            no = food_no.innerHTML;
+            quantity = food_quantity.innerHTML;
+            name = food_name.innerHTML;
+            // food == 1 than the messege is show 
+            if (quantity == 1) {
+                if (confirm(+ no + ". Are you sure delete all " + name)) {
+                    let foodMinusArray = [];
+                    for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
+                        if (Order_Items_Bucket_Array[food].no != no) {
+                            foodMinusArray.push(Order_Items_Bucket_Array[food])
+                        }
+
+                    }
+                    Order_Items_Bucket_Array = [];
+                    Order_Items_Bucket_Array = foodMinusArray;
+                }
+            }
+            // food != 1 than show the messege and remove 1 quantity 
+            else {
+                for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
+                    if (Order_Items_Bucket_Array[food].no == no) {
+
+                        // add this if to show the messsege to remove 1< itsms 
+                        if (confirm(" Quantity: " + quantity + " remove one " + name)) {
+                            Order_Items_Bucket_Array[food].quantity = Order_Items_Bucket_Array[food].quantity - 1;
+                        }
+                    }
+
+                }
+            }
+            display_order_Bucket();
+        }
+
+
+        // full list delete .. on the bucket (just push another data in the new array and empty the old aarray )
+        function deleteFootsQuantity(lets) {
+
+            selectFood = lets.parentElement.parentElement;
+            let food_no = selectFood.getElementsByTagName("td")[0];
+            let food_name = selectFood.getElementsByTagName("td")[1];
+            no = food_no.innerHTML;
+            name = food_name.innerHTML;
+            if (confirm(no + ".Are you sure delete the " + name + " list !")) {
+                deleteArray = [];
+                for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
+                    if (Order_Items_Bucket_Array[food].no != no) {
+                        deleteArray.push(Order_Items_Bucket_Array[food]);
+                    }
+                }
+                Order_Items_Bucket_Array = [];
+                Order_Items_Bucket_Array = deleteArray;
+                display_order_Bucket();
+            }
+        }
+    </script>
+</body>
+
+</html>
