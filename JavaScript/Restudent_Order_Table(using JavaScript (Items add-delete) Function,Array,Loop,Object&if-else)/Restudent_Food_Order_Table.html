@@ -251,7 +251,7 @@
             text-shadow: 1px 1px 1px rgb(228, 210, 11);
         }
 
-        #orderBucketTableId {
+        #orderBasketTableId {
             background: lemonchiffon;
             border: 2px double rgb(85, 20, 197);
             height: 25vh;
@@ -273,7 +273,7 @@
             margin: 1vw 1vw;
     } 
 }
-        #orderBucketTableId th {
+        #orderBasketTableId th {
             border: indigo 2px solid;
             background-color: dodgerblue;
             font-family: 'Acme', sans-serif;
@@ -282,7 +282,7 @@
 
         }
 
-        #orderBucketTableId td {
+        #orderBasketTableId td {
             border: rgb(16, 60, 161) 2px solid;
             background-color: rgb(21, 183, 121);
             font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -313,7 +313,7 @@
     </header>
     <main>
         <div id="food_Order_Manu" ></div>
-        <div id="OrderBucketId"></div>
+        <div id="OrderBasketId"></div>
     </main>
     <footer id="footer">
        <a href="mailto:atanumajee147@gmail.com" style="float:right;margin-right: 10px;"><img src="./img/icon.png" height="32px" alt="this is the icon of the page !"></a><a href="mailto:atanumajee147@gmail.com" style="float:left;margin-left: 10px;"><img src="./img/icon.png" height="32px" alt="this is the icon of the page !"></a> <p> ^_^ copyright: <a href="mailto:atanumajee147@gmail.com">atanumajee147@gmail.com</a> &copy; ^_^ </p>  
@@ -343,7 +343,7 @@
         }
         ];
         // console.log( food_Item_Array)
-        let Order_Items_Bucket_Array = [];
+        let Order_Items_Basket_Array = [];
         // now call the display_manu(); function 
         display_manu();
         // display the food items manu table 
@@ -414,41 +414,41 @@
             let price = food_price.innerHTML;
 
             //  alert(no + " " + name+ " " + price);
-            // add order bucket 
+            // add order Basket 
             let new_food_order = {
                 "no": no, "name": name, "price": price, "quantity": 1
             };
 
-            // fst check your order already add the Order_Items_Bucket_Array
-            let item_in_Bucket = -1;
-            for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
-                if (Order_Items_Bucket_Array[food].no == no) {
-                    item_in_Bucket = food;
+            // fst check your order already add the Order_Items_Basket_Array
+            let item_in_Basket = -1;
+            for (let food = 0; food < Order_Items_Basket_Array.length; food++) {
+                if (Order_Items_Basket_Array[food].no == no) {
+                    item_in_Basket = food;
                 }
 
             }
-            // if  not the food added in the Order_Items_Bucket_Array
-            if (item_in_Bucket < 0) {
-                Order_Items_Bucket_Array.push(new_food_order);
-                alert(no + "." + name + " Price " + price + "  Add your Bucket !  ");
-                console.log(Order_Items_Bucket_Array);
+            // if  not the food added in the Order_Items_Basket_Array
+            if (item_in_Basket < 0) {
+                Order_Items_Basket_Array.push(new_food_order);
+                alert(no + "." + name + " Price " + price + "  Add your Basket !  ");
+                console.log(Order_Items_Basket_Array);
             }
-            // if already added the food in your Order_Items_Bucket_Array than change the Quantity
+            // if already added the food in your Order_Items_Basket_Array than change the Quantity
             else {
-                Order_Items_Bucket_Array[item_in_Bucket].quantity = Order_Items_Bucket_Array[item_in_Bucket].quantity + 1;
+                Order_Items_Basket_Array[item_in_Basket].quantity = Order_Items_Basket_Array[item_in_Basket].quantity + 1;
                 alert(no + "." + name + " Price " + price + " Already exits you extend the Quantity ");
-                console.log(Order_Items_Bucket_Array);
+                console.log(Order_Items_Basket_Array);
 
             }
             // call the functions 
-            display_order_Bucket();
+            display_order_Basket();
          }
-         // Display the display_order_Bucket table 
-          function display_order_Bucket() {
-            let orderTable = "<table  id='orderBucketTableId'>"
+         // Display the display_order_Basket table 
+          function display_order_Basket() {
+            let orderTable = "<table  id='orderBasketTableId'>"
             orderTable = orderTable + "<tr>"
 
-            orderTable = orderTable + "<th colspan='8'> Order Bucket </th>"
+            orderTable = orderTable + "<th colspan='8'> Order Basket </th>"
             orderTable = orderTable + "</tr>"
             orderTable = orderTable + "<tr>"
             orderTable = orderTable + "<th>NO</th>"
@@ -465,16 +465,16 @@
             let pay = 0;
 
             // use the loop to print the Array values 
-            for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
+            for (let food = 0; food < Order_Items_Basket_Array.length; food++) {
                 orderTable = orderTable + "<tr>"
-                orderTable = orderTable + "<td >" + Order_Items_Bucket_Array[food].no + "</td>"
-                orderTable = orderTable + "<td>" + Order_Items_Bucket_Array[food].name + "</td>"
-                orderTable = orderTable + "<td>" + Order_Items_Bucket_Array[food].price + "</td>"
-                orderTable = orderTable + "<td>" + Order_Items_Bucket_Array[food].quantity + "</td>"
+                orderTable = orderTable + "<td >" + Order_Items_Basket_Array[food].no + "</td>"
+                orderTable = orderTable + "<td>" + Order_Items_Basket_Array[food].name + "</td>"
+                orderTable = orderTable + "<td>" + Order_Items_Basket_Array[food].price + "</td>"
+                orderTable = orderTable + "<td>" + Order_Items_Basket_Array[food].quantity + "</td>"
 
                 // Formula how to add the total ..... (quantity*price)
 
-                let total = parseInt(Order_Items_Bucket_Array[food].quantity) * parseInt(Order_Items_Bucket_Array[food].price);
+                let total = parseInt(Order_Items_Basket_Array[food].quantity) * parseInt(Order_Items_Basket_Array[food].price);
                 pay = pay + total;
 
                 // console.log("Total:" + total);
@@ -493,9 +493,9 @@
                 //console.log("All Total:"+pay);
             orderTable = orderTable + "</table>";
 
-            // push the data in OrderBucketId this id.
+            // push the data in OrderBasketId this id.
 
-            document.getElementById("OrderBucketId").innerHTML = orderTable;
+            document.getElementById("OrderBasketId").innerHTML = orderTable;
            let tpay = document.getElementById("total")
             tpay.innerHTML=pay;
             tpay.style.color="red";
@@ -508,14 +508,14 @@
             selectFood = lets.parentElement.parentElement;
             let food_no = selectFood.getElementsByTagName("td")[0];
             no = food_no.innerHTML;
-            for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
-                if (Order_Items_Bucket_Array[food].no == no) {
-                    Order_Items_Bucket_Array[food].quantity = Order_Items_Bucket_Array[food].quantity + 1;
+            for (let food = 0; food < Order_Items_Basket_Array.length; food++) {
+                if (Order_Items_Basket_Array[food].no == no) {
+                    Order_Items_Basket_Array[food].quantity = Order_Items_Basket_Array[food].quantity + 1;
 
                 }
             
             }
-            display_order_Bucket();
+            display_order_Basket();
          }
          // i add the no in a variable than add with inner HTML , run a loop than minus the quality
          function minusFootsQuantity(lets) {
@@ -533,34 +533,34 @@
             if (quantity == 1) {
                 if (confirm(+ no + ". Are you sure delete all " + name)) {
                     let foodMinusArray = [];
-                    for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
-                        if (Order_Items_Bucket_Array[food].no != no) {
-                            foodMinusArray.push(Order_Items_Bucket_Array[food])
+                    for (let food = 0; food < Order_Items_Basket_Array.length; food++) {
+                        if (Order_Items_Basket_Array[food].no != no) {
+                            foodMinusArray.push(Order_Items_Basket_Array[food])
                         }
 
                     }
-                    Order_Items_Bucket_Array = [];
-                    Order_Items_Bucket_Array = foodMinusArray;
+                    Order_Items_Basket_Array = [];
+                    Order_Items_Basket_Array = foodMinusArray;
                 }
             }
             // food != 1 than show the messege and remove 1 quantity 
             else {
-                for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
-                    if (Order_Items_Bucket_Array[food].no == no) {
+                for (let food = 0; food < Order_Items_Basket_Array.length; food++) {
+                    if (Order_Items_Basket_Array[food].no == no) {
 
                         // add this if to show the messsege to remove 1< itsms 
                         if (confirm(" Quantity: " + quantity + " remove one " + name)) {
-                            Order_Items_Bucket_Array[food].quantity = Order_Items_Bucket_Array[food].quantity - 1;
+                            Order_Items_Basket_Array[food].quantity = Order_Items_Basket_Array[food].quantity - 1;
                         }
                     }
 
                 }
             }
-            display_order_Bucket();
+            display_order_Basket();
         }
 
 
-        // full list delete .. on the bucket (just push another data in the new array and empty the old aarray )
+        // full list delete .. on the Basket (just push another data in the new array and empty the old aarray )
         function deleteFootsQuantity(lets) {
 
             selectFood = lets.parentElement.parentElement;
@@ -570,14 +570,14 @@
             name = food_name.innerHTML;
             if (confirm(no + ".Are you sure delete the " + name + " list !")) {
                 deleteArray = [];
-                for (let food = 0; food < Order_Items_Bucket_Array.length; food++) {
-                    if (Order_Items_Bucket_Array[food].no != no) {
-                        deleteArray.push(Order_Items_Bucket_Array[food]);
+                for (let food = 0; food < Order_Items_Basket_Array.length; food++) {
+                    if (Order_Items_Basket_Array[food].no != no) {
+                        deleteArray.push(Order_Items_Basket_Array[food]);
                     }
                 }
-                Order_Items_Bucket_Array = [];
-                Order_Items_Bucket_Array = deleteArray;
-                display_order_Bucket();
+                Order_Items_Basket_Array = [];
+                Order_Items_Basket_Array = deleteArray;
+                display_order_Basket();
             }
         }
     </script>
