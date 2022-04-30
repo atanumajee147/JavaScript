@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Webside</title>
+    <link rel="shortcut icon" href="./img/favicon.ico" type="image/x-icon">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        main {
+            height: 88.2vh;
+        }
+
+        nav ul li {
+            float: left;
+            list-style: none;
+            padding: 9px;
+            margin: 3px 2px;
+            border: 2px solid orangered;
+            -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 28px -21px rgba(255,157,42,0.61); 
+box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 28px -21px rgba(255,157,42,0.61);
+           
+           box-shadow: none inset , none inset 
+         
+        }
+
+        nav ul li:hover {
+            float: left;
+            list-style: none;
+            padding: 9px;
+            margin: 3px 2px;
+            -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 50px 17px rgba(19,255,76,0.95); 
+box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 50px 17px rgba(19,255,76,0.95);
+    
+        }
+
+        nav ul {
+            height: 48px;
+            background-color: rgb(157, 207, 239);
+            border: 2px solid orangered;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+           
+            font-size: medium;
+            font-variant: small-caps;
+            font-style: bold;
+            color: rgb(239, 22, 22); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; 
+
+        }
+        nav ul li a:hover {
+            text-decoration: none;
+            
+            font-size: medium;
+            font-variant: small-caps;
+            font-style: bold;
+            color: rgb(65, 62, 62); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; 
+
+        }
+
+        footer {
+            background-color: rgb(30, 145, 216);
+            align-items: center;
+            height: 30px;
+            border: 2px solid orangered;
+        }
+
+        footer p a {
+
+            color: wheat;
+            text-decoration: none;
+        }
+
+        footer p {
+            padding-top: 5px;
+            color: wheat;
+            text-align: center;
+        }
+
+        .contaner {
+            height: 600px;
+            width: 100%;
+           
+        }
+
+        .contant {
+            margin: 5vh 15vw;
+            width: 204px;
+            border-radius: 2px;
+            height: 340px;
+            margin: 10px 20px;
+            float: left;
+            align-items: center;
+            text-align: center;
+            box-shadow: 4px 8px 10px 8px rgb(171, 226, 104);
+
+            -webkit-box-shadow: 5px 10px 10px 9px rgba(0,0,0,0.62); 
+box-shadow: 5px 10px 10px 9px rgba(12, 12, 12, 0.62);
+
+        }
+      
+         #search{
+            float: left;
+            list-style: none;
+            padding: 10px;
+            width: 15%;
+            margin: 3px 2px;
+            border: 2px solid orangered;
+            
+            -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 28px -21px rgba(255,157,42,0.61); 
+box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 28px -21px rgba(255,157,42,0.61);
+           
+           box-shadow: none inset , none inset ;
+           color: rgb(239, 22, 22); font-size: 16px;  font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; 
+
+         }
+         #search:hover{
+            float: left;
+            list-style: none;
+            padding: 10px;
+            margin: 3px 2px;
+            border: 2px solid orangered;
+            -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 50px 17px rgba(19,255,76,0.95); 
+box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 50px 17px rgba(19,255,76,0.95);
+color: rgb(15, 16, 16); font-size: 16px;  font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; 
+         }
+         #mybtn{
+           padding: 30px;
+           margin: 3px 2px;
+           height: 40px;
+           color: rgb(91, 90, 96); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; 
+            -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 28px -21px rgba(255,157,42,0.61); 
+box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 28px -21px rgba(255,157,42,0.61);
+           
+           box-shadow: none inset , none inset 
+
+           
+        }
+         #mybtn:hover{
+           padding: 30px;
+           margin: 3px 2px;
+           height: 40px;
+           color: rgb(239, 22, 22); font-size: 16px; line-height: 16px; padding: 6px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; 
+           -webkit-box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 50px 17px rgba(19,255,76,0.95); 
+box-shadow: inset -1px 3px 8px 5px #1F87FF, inset -19px -30px 50px 17px rgba(19,255,76,0.95);
+        }
+
+        #paynow {
+            margin: 10px 0px;
+            width: 100px;
+            border-radius: 2px;
+            color: rgb(255, 253, 32);
+            font-size: 16px;
+            line-height: 16px;
+            padding: 6px;
+            border-radius: 10px;
+            font-family: Georgia, serif;
+            font-weight: normal;
+            text-decoration: none;
+            font-style: normal;
+            font-variant: normal;
+            text-transform: none;
+            background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+            box-shadow: rgb(0, 0, 0) 3px 3px 8px 3px;
+            border: 2px solid rgb(28, 110, 164);
+            display: inline-block;
+        }
+      
+
+        #paynow:hover {
+            background: #1C6EA4;
+            color: red;
+        }
+
+        #paynow:active {
+            background: #074671;
+        }
+        h2{
+            padding-bottom: 10px;
+        }
+        h3{
+            padding-bottom: 3px;
+        }
+        #img{
+           
+            border-radius: 4px;
+           
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li style="background-color: rgb(155, 240, 86);"><a href="#" style="color: black;">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Contact</a></li>
+             <input type="search" name="search" id="search" placeholder="Enter Your item name ..." >
+             <button id="mybtn" onclick="searchitems()"> Search</button>
+                <li style="float: right;"><a href="#">Login</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div id="message"> </div>
+        <div class="contaner">
+            <div class="contant" style="background-color:silver;">
+                <img src="./img/silver.jpg" alt="this is my picture" height="200px" width="200px" id="img">
+                <h2 >Silver</h2>
+                <h3>3000 /- Rs.</h3>
+                <p> only for video and audio </p>
+                <button onclick="paynow(this)" id="paynow">Buy Now</button>
+            </div>
+            <div class="contant" style="background-color:goldenrod">
+                <img src="./img/golden.jpg" alt="this is my picture" height="200px" width="200px" id="img">
+                <h2 >Golden</h2>
+                <h3>5000 /- Rs.</h3>
+                <p>  HQ videdo, audio & Gaming </p>
+                <button onclick="paynow(this)" id="paynow">Buy Now</button>
+            </div>
+            
+            <div class="contant" style="background-color:rgb(16, 103, 164)">
+                <img src="./img/prime.jpg" alt="this is my picture" height="200px" width="200px" id="img">
+                 <h2 >Prime</h2>
+                <h3>10000 /- Rs.</h3>
+                <p>HD video, Audio & Gaming </p>
+                <button onclick="paynow(this)" id="paynow">Buy Now</button>
+            </div>
+            
+            <div class="contant" style="background-color:rgb(137, 137, 142)">
+                <img src="./img/black.jpg" alt="this is my picture" height="200px" width="200px" id="img">
+                 <h2 >Black</h2>
+                <h3 >25000 /- Rs.</h3>
+                <p>Vip All Fitures are Avalable</p>
+                <button onclick="paynow(this)" id="paynow">Buy Now</button>
+            </div>
+        </div>
+    </main>
+    <footer id="footer">
+        <p>
+            ^_^ Copyright: <a href="mailto:atanumajee147@gmail.com">atanumajee147@gmail.com</a> ^_^
+        </p>
+    </footer>
+    <!-- Paste razopay script here -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script>
+        // use to show the alert 
+        function paynow(btn) {
+            if (confirm("are you sure to pay this !")) {
+                let contant = btn.parentElement;
+             
+                let item = contant.getElementsByTagName("h2")[0].innerHTML;
+                let pay = contant.getElementsByTagName("h3")[0].innerHTML;
+                // split are use to convar the text in Array ... may i create this array than call 1st element
+                pay = pay.split(" ")[0];
+                // alert(`${item} Rs. ${pay}`);
+                // paste razopay options here
+
+                let options = {
+                    "key": "rzp_test_p1pW1Qw5rC9VTH", // Enter the Key ID generated from the Dashboard
+                    "amount": pay*100, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+                    "currency": "INR",
+                    "name": "Contant",
+                    "description": item,
+                   
+                    "image": "./img/pp.jpg",
+
+                    "handler": function (response) {
+                        alert(` Your valuable payment id is : ${response.razorpay_payment_id}`);
+
+                    },
+
+                };
+                var rzp1 = new Razorpay(options);
+
+                rzp1.open();
+            }
+        }
+
+// may  I create a search bar .....
+      
+function searchitems() {
+
+var search = document.getElementById("search").value; // an
+
+if (search == "") {
+    document.getElementById("message").innerHTML = "";
+}
+
+var allproducts = document.getElementsByClassName("contant");
+var flag = 0;
+for (i = 0; i < allproducts.length; i++) {
+
+    var pname = allproducts[i].getElementsByTagName("h2")[0].innerHTML; // shirt 1
+
+    var searchchar = pname.substring(0, search.length); //sh
+
+    if (search.toLowerCase() == searchchar.toLowerCase()) {
+        allproducts[i].style.display = "block";
+        flag = 1;
+    } else {
+        allproducts[i].style.display = "none";
+    }
+}
+
+if (flag == 0) {
+    document.getElementById("message").innerHTML ='<img src="./img/error.png" alt="no data found"  height="650px"  >';
+}
+}
+     
+
+
+
+    </script>
+</body>
+
+</html>
