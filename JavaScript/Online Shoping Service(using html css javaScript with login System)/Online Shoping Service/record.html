@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Sign-up page Flipkart.com</title>
+     <style>
+         body{
+             height: 100vh;
+         }
+         main{
+            height: 82.2vh;
+         }
+     </style>
+
+    <link rel="stylesheet" href="./file/style.css">
+</head>
+
+<body onload="all_customar_data()">
+    <header>
+        <nav>
+            <ul>
+                <li onclick="function btn(){alert(' ^.^  please login frist than try!')};btn()"><a href="#" style=" font-size: 30px;  ">Flipkart</a></li>
+                <input type="search" name="search" id="search" placeholder="Enter customar  name ...">
+                <input type="button" value="Search" class="myButton" onclick="searchByName()">
+                <li style="float: right;   margin-right: 200px; padding: 20px; "><a href="./sign-up.html">Sign-up</a>
+                </li>
+
+                <li style="float: right;     padding: 20px;"><a href="./index.html"> Login</a></li>
+                <li style="float: right;     padding: 20px; color: coral; "><a href="./record.html"
+                        style="color:rgb(238, 187, 20);"> Records</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+
+        <div id="customar_data_Table_display">
+
+        </div>    
+      
+
+
+    </main>
+      
+      <footer>
+           <p>
+              ^_^    copyright: <a href="mailto:atanumajee147@gmail.com">   atanumajee147@gmail.com    </a>    &copy;
+              ^_^    </p>
+      </footer>
+
+    <script>
+        function all_customar_data(){
+            console.log("my name is Atanu");
+            let this_data = "<table  id='customar_data_table'>";
+
+            if (localStorage.getItem("customar_data") === null) {
+                this_data = this_data + "<tr>";
+                this_data = this_data + "<th colspan='6'>No Record Founds</th>";
+
+                this_data = this_data + "</tr>";
+            } else {
+                let customar_data_store_Array = JSON.parse(localStorage.getItem("customar_data"));
+                this_data = this_data + "<tr>";
+                this_data = this_data + "<th colspan='10'><h3 style=' float:left; margin-left:450px'> Customar Data Record Table </h3> <button  id='dltallBtn'  float:right; margin:4px 10px'  onclick='clearList()'> Delete All</button> </th>";
+
+                this_data = this_data + "</tr>";
+                this_data = this_data + "<tr>";
+                this_data = this_data + "<th>No</th>";
+                this_data = this_data + "<th>Username</th>";
+                this_data = this_data + "<th>Name</th>";
+                this_data = this_data + "<th>Number</th>";
+                this_data = this_data + "<th>Password</th>";
+                this_data = this_data + "<th>Re-Enter-Password</th>";
+                this_data = this_data + "<th>Email</th>";
+                this_data = this_data + "<th>Date of Birth</th>";
+                this_data = this_data + "<th>Gender</th>";
+                this_data = this_data + "<th>Action</th>";
+                this_data = this_data + "</tr>";
+                for (i = 1; i < customar_data_store_Array.length; i++) {
+                    this_data = this_data + "<tr>";
+                    this_data = this_data + "<td>" + [i]+ "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].username + "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].name + "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].number + "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].password + "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].repassword + "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].email + "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].date + "</td>";
+                    this_data = this_data + "<td>" + customar_data_store_Array[i].gender + "</td>";
+                    this_data = this_data + "  <td><button  id='edButtos' style='color:red'  onclick='delete_Customar_Record(this)'> Delete </button></td>";
+                    this_data = this_data + "</tr>";
+                }    
+                this_data = this_data + "</table>";
+
+                console.log("customar_data: " + customar_data_store_Array.length);
+                document.getElementById('customar_data_Table_display').innerHTML = this_data;
+            }
+        }
+
+
+
+      
+        // create a function to clear all table data from the localStorage 
+
+        function clearList() {
+            if (confirm("Are u sure to  clear the all data !")){
+                localStorage.clear();
+            }
+          
+
+        }
+
+
+      
+        // use to search the table items ....
+        function searchByName() {
+            //use to data fatch from Search box (this Search Bar id )
+            let input = document.getElementById("search").value;
+
+            // use to Identify the table (search table id )
+            let student_data_table = document.getElementById("customar_data_table");
+
+            //Now find the No. of rows in the table
+            let TableRow = student_data_table.getElementsByTagName("tr");
+            // use to chatch the row when you search 
+            for (i = 0; i < TableRow.length; i++) {
+                //Find that td is available or not in the current Row
+                let ItemName = TableRow[i].getElementsByTagName("td")[2];
+                // let ItemName = TableRow[i].getElementsByTagName("td")[0];
+
+                if (ItemName) {
+                    let item = ItemName.innerHTML;
+                    let input_len = input.length;
+                    let data = item.slice(0, input_len);
+
+                    if (data.toLowerCase() == input.toLowerCase()) {
+                        TableRow[i].style.display = "";
+                    } else {
+                        TableRow[i].style.display = "none";
+                    }
+                }
+            }
+        }
+
+
+          // use to delete one by one rows 
+
+
+        function delete_Customar_Record(dlt) {
+            let tr = dlt.parentElement.parentElement;
+            let td = tr.getElementsByTagName("td")[1];
+            let username = td.innerHTML;
+            //alert(regno);
+
+            if (confirm(`Are you sure to delete :- ${username}`)) {
+                let Other_Customar_Array = [];
+				
+                if (localStorage.getItem("customar_data") === null) {
+                    Other_Customar_Array  = [];
+                } else {
+                    let customar_data_store_Array = JSON.parse(localStorage.getItem("customar_data"));
+
+                    for (i = 0; i < customar_data_store_Array.length; i++) {
+                        if (customar_data_store_Array[i].username != username) {
+                            Other_Customar_Array.push(customar_data_store_Array[i]);
+                        }
+                    }
+
+                    localStorage.clear();
+                    localStorage.setItem('customar_data', JSON.stringify(Other_Customar_Array));
+
+                    alert(`${username} is Deleted.`);
+                    all_customar_data();
+                 
+                }
+            }
+        }
+
+
+
+        </script>
+</body>
+
+</html>

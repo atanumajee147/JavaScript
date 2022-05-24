@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>Sign-up page Flipkart.com</title>
+    <style>
+        body {
+            height: 100vh;
+        }
+        
+        main {
+            height: 82.2vh;
+        }
+    </style>
+
+    <link rel="stylesheet" href="./file/style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li onclick="function btn(){alert(' ^.^  please login frist than try!')};btn()"><a href="#" style=" font-size: 30px;  ">Flipkart</a></li>
+                <marquee direction="left" width="800" height="600">This page is the Registration page, here you create your profile with your details, than go and login. </marquee>
+                <li style="float: right;   margin-right: 200px; padding: 20px; "><a href="./record.html">Records</a></li>
+
+                <li style="float: right;     padding: 20px;"><a href="./index.html"> Login</a></li>
+                <li style="float: right;     padding: 20px; color: coral; "><a href="./sign-up.html" style="color:rgb(238, 187, 20);"> Sign-up</a></li>
+
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+
+
+        <form onsubmit="event.preventDefault(); register()">
+            <table id="sign-upTableId">
+                <thead>
+                    <tr>
+                        <th colspan="2">
+                            <h3> Registration From</h3>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td> <label for="name">Name:</td>
+                        <td><input type="text" name="name" id="name" placeholder="Enter your name" required onblur="callGenderApI();"></td>
+                        </label>
+                    </tr>
+                    <input type="hidden" name="gender" id="gender">
+                    <tr>
+                        <td> <label for="email">Email Address:</td>
+                        <td><input type="email" name="email" id="email" placeholder="Enter your email" required></td>
+                        </label>
+                    </tr>
+                    <tr>
+                        <td> <label for="number">Mobile Number:</td>
+                        <td><input type="number" name="number" id="number" placeholder="Enter your M Number" required
+                                minlength="10" maxlength="10"></td>
+                        </label>
+                    </tr>
+                    <tr>
+                        <td> <label for="username">Username:</td>
+                        <td><input type="text" name="username" id="username" placeholder="Enter your username" required>
+                        </td>
+                        </label>
+                    </tr>
+                    <tr>
+                        <td> <label for="date"> Date:</td>
+                        <td><input type="date" id="date" name="date" value="2022-06-04" min="1980-01-01"
+                                max="2022-07-5" required></td>
+                        </label>
+                    </tr>
+                    <tr>
+                        <td> <label for="password">Password:</td>
+                        <td><input type="password" name="password" id="password" placeholder="Enter your password "
+                                required>
+                        </td>
+                        </label>
+                    </tr>
+                    <tr>
+                        <td> <label for="repassword">Re-type-Password:</td>
+                        <td><input type="password" name="repassword" id="repassword" placeholder=" Re-type-Password your Password "
+                                required>
+                        </td>
+                        </label>
+                    </tr>
+                    <tr>
+
+                        <td> <label for="submit"><input value="Submit" type="submit" name="submit" id="submit" required>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </form>
+
+
+    </main>
+    <footer>
+        <p>
+           ^_^    copyright: <a href="mailto:atanumajee147@gmail.com">   atanumajee147@gmail.com    </a>    &copy;
+           ^_^    </p>
+   </footer>
+   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        function register() {
+            let username = document.getElementById("username").value;
+            let name = document.getElementById("name").value;
+            let gender = document.getElementById("gender").value;
+            let password = document.getElementById("password").value;
+            let repassword = document.getElementById("repassword").value;
+            let number = document.getElementById("number").value;
+            let email = document.getElementById("email").value;
+            let date = document.getElementById("date").value;
+
+            let customar_data_object = {
+                "username": username,
+                "name": name,
+                "gender": gender,
+                "date": date,
+                "password": password,
+                "repassword": repassword,
+                "number": number,
+                "email": email,
+            };
+            //console.log(customar_data_object);
+            if (localStorage.getItem("customar_data") === null) {
+                var customar_data_store_Array = [];
+                customar_data_store_Array.push(customar_data_object);
+                localStorage.setItem('customar_data', JSON.stringify(customar_data_store_Array));
+                console.log(customar_data_store_Array);
+            } else {
+                var customar_data_store_Array = JSON.parse(localStorage.getItem("customar_data"));
+                customar_data_store_Array.push(customar_data_object);
+                localStorage.setItem('customar_data', JSON.stringify(customar_data_store_Array));
+                console.log(customar_data_store_Array);
+            }
+            removeInputData();
+        }
+
+        // one time submit the data than clear the inputBox ....
+        function removeInputData() {  // this function use for only clear input data 
+            let username = document.getElementById("username").value = "";
+            let name = document.getElementById("name").value = "";
+            // let gender = document.getElementById("gender").value = "";
+            let password = document.getElementById("password").value = "";
+            let repassword = document.getElementById("repassword").value = "";
+            let number = document.getElementById("number").value = "";
+            let email = document.getElementById("email").value = "";
+            let date = document.getElementById("date").value = "";
+
+        }
+
+
+      // use to call the gender from the name 
+
+        function callGenderApI() {
+           let name = document.getElementById("name").value;
+          console.log(name)
+            $.ajax({
+                url: `https://gender-api.com/get?name=${name}&key=BkUtrYhjlXElxt8KkMT2JmXemERVQ9wtaHch`,
+                method: "get",
+                data: {},
+                success: function(adgender) {
+                 document.getElementById("gender").value = adgender.gender;
+                }
+            })
+     }
+    </script>
+
+
+</body>
+
+</html>

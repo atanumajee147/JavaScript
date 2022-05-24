@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Acme&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* scrollbar style */
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 10px blue;
+    border-radius: 2px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background-color: #1ea2bc;
+
+    border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: blue;
+}
+
+nav ul {
+
+    background-color: #1ea2bc;
+    height: 70px;
+    margin-bottom: 0px;
+
+}
+
+nav ul li {
+    list-style: none;
+    float: left;
+    padding: 10px;
+}
+
+nav ul marquee {
+    padding: 14px;
+    color: #ebf3f3;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 23px;
+}
+
+nav ul li a {
+
+    color: #ebf3f3;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+nav ul li a:hover {
+
+    color: #d19c0d;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+#search {
+
+    border-radius: 2px;
+    padding: 6px;
+    margin-top: 12px;
+    margin-left: 80px;
+    border: #1ea2bc;
+    width: 30%;
+}
+
+.myButton {
+
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 22px;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(77, 163, 221) 0%, rgb(35, 136, 203) 50%, #1ea2bc 100%);
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border: 2px solid rgb(104, 176, 224);
+    display: inline-block;
+}
+
+.myButton:hover {
+    background: #1ea2bc;
+}
+
+.myButton:active {
+    background: #0a7084;
+}
+
+.mainslide {
+    margin-top: 0px;
+    background-color: #c3cbcd;
+    height: 190px;
+    padding-bottom: 20px;
+
+}
+
+.mainslidecard-item {
+    float: left;
+    font-size: medium;
+
+    margin-top: 0;
+    text-align: center;
+    margin-left: 80px;
+}
+
+.mainslidecard-item h3 {
+    font-size: 20px;
+    padding-bottom: 0px;
+}
+
+#mainslideimg {
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 6px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+#mainslideimg:hover {
+    height: 84px;
+    width: 84px;
+    border-radius: 20px;
+    align-items: center;
+    padding-top: 6px;
+    margin-bottom: 0px;
+    margin-top: 0px;
+}
+
+
+
+
+.mainslidecard-item p {
+    font-size: 17px;
+    padding-bottom: 0px;
+}
+
+/* Fruit spl offer  */
+.FrutsSpOC {
+    margin-top: 0px;
+    background-color: #ebf3f3;
+    height: 300px;
+    border-bottom: 2px solid red;
+    border-top: 2px solid red;
+}
+
+.FrutsSpOCBucket {
+    margin: 2px 13px;
+    float: left;
+    align-items: center;
+    text-align: center;
+}
+
+.ElectronicSpOC {
+    margin-top: 0px;
+    background-color: #ebf3f3;
+    height: 300px;
+    border-bottom: 2px solid red;
+}
+
+.ElectronicSpOCBucket {
+    float: left;
+    align-items: center;
+    text-align: center;
+    margin: 2px 13px;
+}
+
+.ElectronicSpOCImeageClass {
+    border-radius: 0%;
+}
+
+
+
+.fruitImeageClass:hover{
+    height: 163px;
+    width: 163px; 
+}
+/*    Login page table style start here ... */
+
+
+#loginTableId {
+    margin: 1vw 0 0 10vw;
+    background-color: #1ea2bc;
+    border-radius: 5px;
+    color: black;
+    table-layout: auto;
+    /* border: 2px solid black; */
+    width: 30vw;
+    align-items: center;
+    box-shadow: 10px 10px 10px gray;
+    height: 25vh;
+    align-items: center;
+    text-align: center;
+}
+
+#loginTableId th {
+    color: #535656;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+#loginTableId td {
+
+    color: #3d3f3f;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+#loginTableId #submit {
+    margin-top: 20%;
+    margin-left: 300%;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 16px;
+    padding: 6px;
+  margin-bottom: 10%;
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 20px 5px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+
+#loginTableId #submithover {
+/* background: #1C6EA4; */
+    background-color: #47df37;
+}
+
+#loginTableId #submit:active {
+    background: #144E75;
+}
+
+/* All are add this css ...... */
+
+#username,
+#password,
+#name,
+#number,
+#email,
+#repassword,
+#date {
+    width: 78%;
+    background-color: #1ea2bc;
+    overflow: hidden;
+    margin-top: 4px;
+    height: 40px;
+    border: 2.5px solid rgb(238, 187, 20);
+    border-radius: 5px;
+    text-align: center;
+}
+
+
+/*    Sign-up page page table style start here ... */
+
+#sign-upTableId {
+    margin: 1vw 0 0 10vw;
+    background-color: #1ea2bc;
+    border-radius: 5px;
+    color: black;
+    table-layout: auto;
+    /* border: 2px solid black; */
+    width: 30vw;
+    align-items: center;
+    box-shadow: 10px 10px 10px gray;
+    height: 50vh;
+    align-items: center;
+    text-align: center;
+}
+
+
+#sign-upTableId th {
+    color: #535656;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+#sign-upTableId td {
+
+    color: #3d3f3f;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+}
+
+#sign-upTableId #submit {
+    margin-top: 20%;
+    margin-left: 100%;
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 16px;
+    padding: 6px;
+  margin-bottom: 10%;
+    background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%);
+    box-shadow: rgb(0, 0, 0) 5px 5px 20px 5px;
+    border: 2px solid rgb(28, 110, 164);
+    display: inline-block;
+}
+
+#sign-upTableId #submithover {
+/* background: #1C6EA4; */
+    background-color: #47df37;
+}
+
+#sign-upTableId #submit:active {
+    background: #144E75;
+}
+
+/* Customar Data Record page ...... */
+
+#customar_data_table{
+    margin: 1vw 0 0 5vw;
+    background-color: #1ea2bc;
+    border-radius: 5px;
+    color: black;
+    table-layout: auto;
+    /* border: 2px solid black; */
+    width: 90vw;
+    align-items: center;
+    box-shadow: 10px 10px 10px gray;
+    height: 50vh;
+    align-items: center;
+    text-align: center;
+}
+#customar_data_table th{
+    color: #535656;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    text-shadow: 0.2px 0.2px 0.1px rgb(73, 91, 232);
+    border: 2px solid rgb(61, 70, 61);
+}
+#customar_data_table th:hover{
+    color: #e84b33;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    text-shadow: 0.2px 0.2px 0.1px rgb(73, 91, 232);
+    border: 2px solid rgb(61, 70, 61);
+}
+#customar_data_table td{
+    text-shadow: 0.2px 0.2px 0.1px rgb(73, 91, 232);
+    color: rgb(189, 234, 234);
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+    border: 2px solid rgb(25, 125, 208);
+}
+#customar_data_table td:hover{
+    text-shadow: 0.2px 0.2px 0.1px rgb(73, 91, 232);
+    color: coral;
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    font-size: 20px;
+
+    border: 2px solid rgb(25, 125, 208);
+}
+#edButtos {
+    background-color: aquamarine;
+    height: auto;
+    width: 86%;
+    height: 75%;
+    /* border: 2px solid black; */
+    border-radius: 20%;
+}
+#edButtos:hover {
+    background-color: rgb(27, 201, 213);
+    height: auto;
+    width: 90%;
+    height: 70%;
+    /* border: 2px solid black; */
+    border-radius: 20%;
+}
+
+#dltallBtn{
+    color: rgb(255, 255, 255);
+    font-size: 16px;
+    line-height: 22px;
+    padding: 15px;
+    border-radius: 5px;
+    font-family: Georgia, serif;
+    font-weight: normal;
+    text-decoration: none;
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    background-image: linear-gradient(to right, rgb(237, 126, 126) 0%, rgb(236, 124, 93) 50%, rgb(244, 128, 128) 100%);
+    box-shadow: rgb(0, 0, 0) 0px 0px 0px 0px;
+    border: 2px solid rgb(104, 176, 224);
+    display: inline-block;
+}
+#dltallBtn:hover{
+    background:coral;
+}
+
+#dltallBtn:active{
+    background: red;
+}
+
+
+/*  Footer style start here ..... */
+
+
+
+footer {
+    background-color: #1ea2bc;
+    color: rgb(255, 255, 255);
+    height: 40px;
+    align-content: center;
+    align-items: center;
+}
+footer p {
+    background-color: #1ea2bc;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    animation:footerstyle  infinite 3s 3s ease-in-out ;
+    text-shadow: 0.2px 0.2px 0.4px #000;
+}
+footer p a:hover {
+    text-decoration: none;
+}
+footer p a {
+    background-color: #1ea2bc;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-family: 'Acme', sans-serif;
+    text-align: center;
+    padding-top: 10px;
+    animation:footerstyle  infinite 3s 3s ease-in-out ;
+}
+@keyframes footerstyle {
+   
+    40%{
+        color: rgb(243, 206, 86);
+    }
+    80%{
+        color: rgb(238, 187, 20);
+    }
+    100%{
+        color: rgb(255, 255, 255);
+    }
+}
+
+/* Others page style ....  */
+.min-maxClass{
+    background-color: #1ea2bc;
+    height: 50px;
+    border: 2px solid red;
+   display: flex;
+   align-items: center;
+   flex-direction: center;
+}
+
